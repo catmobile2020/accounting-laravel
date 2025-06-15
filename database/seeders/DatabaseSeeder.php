@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             RolesSeeder::class,
             TeamSeeder::class,
             UserSeeder::class,
+            SiteSettingsSeeder::class,
         ]);
     }
 }

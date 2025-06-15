@@ -3,34 +3,39 @@
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="#" class="flex items-center">
-                    <x-logo/>
+                    <x-logo />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                        
-                        {{ SiteConfig::get('name') }}
+
+                        {{ core\Siteconfig\Config::show('name') }}
                     </span>
                 </a>
-               
+
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                 <div></div>
                 <div></div>
                 <div>
                     <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact Details</h2>
-                    <span class="text-xs text-gray-600">Address : {{ SiteConfig::get('address') }}</span> <br>
-                    <span class="text-xs text-gray-600">UK Non-geographic: {{ SiteConfig::get('phone_01') }}</span>  <br>
-                    <span class="text-xs text-gray-600">UK London: {{ SiteConfig::get('phone_02') }}</span>  <br>
-                    <span class="text-xs text-gray-600">UK Mobile: {{ SiteConfig::get('phone_03') }}</span>  <br>
+                    <span class="text-xs text-gray-600">Address : {{ core\Siteconfig\Config::show('address') }}</span>
+                    <br>
+                    <span class="text-xs text-gray-600">UK Non-geographic:
+                        {{ core\Siteconfig\Config::show('phone_01') }}</span> <br>
+                    <span class="text-xs text-gray-600">UK London: {{ core\Siteconfig\Config::show('phone_02') }}</span>
+                    <br>
+                    <span class="text-xs text-gray-600">UK Mobile: {{ core\Siteconfig\Config::show('phone_03') }}</span>
+                    <br>
                 </div>
             </div>
         </div>
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400" title="{{config('app.version')}}">© {{now()->year}} <a href="#"
-                    class="hover:underline">{{ SiteConfig::get('name') }}</a>. All Rights
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400" title="{{config('app.version')}}">©
+                {{now()->year}} <a href="#" class="hover:underline">{{ core\Siteconfig\Config::show('name') }}</a>. All
+                Rights
                 Reserved.
             </span>
             <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-                <a href="{{ SiteConfig::get('facebook') }}"
+                <a href="{{ core\Siteconfig\Config::show('facebook') }}"
                     class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd"
@@ -39,14 +44,14 @@
                     </svg>
                 </a>
 
-                <a href="{{ SiteConfig::get('twitter') }}"
+                <a href="{{ core\Siteconfig\Config::show('twitter') }}"
                     class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path
                             d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                     </svg>
                 </a>
-                <a href="{{ SiteConfig::get('github') }}"
+                <a href="{{ core\Siteconfig\Config::show('github') }}"
                     class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fill-rule="evenodd"
@@ -54,10 +59,10 @@
                             clip-rule="evenodd" />
                     </svg>
                 </a>
-                <a href="{{ SiteConfig::get('youtube') }}"
+                <a href="{{ core\Siteconfig\Config::show('youtube') }}"
                     class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
                             d="M21.7 8.037a4.26 4.26 0 0 0-.789-1.964 2.84 2.84 0 0 0-1.984-.839c-2.767-.2-6.926-.2-6.926-.2s-4.157 0-6.928.2a2.836 2.836 0 0 0-1.983.839 4.225 4.225 0 0 0-.79 1.965 30.146 30.146 0 0 0-.2 3.206v1.5a30.12 30.12 0 0 0 .2 3.206c.094.712.364 1.39.784 1.972.604.536 1.38.837 2.187.848 1.583.151 6.731.2 6.731.2s4.161 0 6.928-.2a2.844 2.844 0 0 0 1.985-.84 4.27 4.27 0 0 0 .787-1.965 30.12 30.12 0 0 0 .2-3.206v-1.516a30.672 30.672 0 0 0-.202-3.206Zm-11.692 6.554v-5.62l5.4 2.819-5.4 2.801Z"
                             clip-rule="evenodd" />

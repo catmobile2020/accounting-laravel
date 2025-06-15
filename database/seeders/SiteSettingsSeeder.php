@@ -3,8 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Intelrx\Sitesettings\SiteConfig;
-
+use Core\Siteconfig\Config as SiteConfig;
 
 class SiteSettingsSeeder extends Seeder
 {
@@ -28,7 +27,7 @@ class SiteSettingsSeeder extends Seeder
         ];
 
         foreach ($data as $key => $value) {
-            SiteConfig::store($key, $value);
+            SiteConfig::save($key, $value);
         }
     }
 }

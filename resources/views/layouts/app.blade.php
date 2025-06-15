@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @php
+        use Core\Siteconfig\Config as SiteConfig;
+    @endphp
 
-    <title>{{ SiteConfig::get('name') }}</title>
+    <title>{{ SiteConfig::show('name') }}</title>
 
     @if(config('googletagmanager.id'))
         @include('googletagmanager::head')
     @endif
 
     <!-- Styles -->
-    @vite('resources/css/app.css')
+    @vite(entrypoints: 'resources/css/app.css')
     @livewireStyles
 </head>
+
 <body class="font-sans antialiased">
     @if(config('googletagmanager.id'))
         @include('googletagmanager::body')
@@ -33,7 +38,7 @@
     @livewireScripts
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const dropdowns = document.querySelectorAll('.dropdown');
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
@@ -53,4 +58,5 @@
         });
     </script>
 </body>
+
 </html>
